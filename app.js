@@ -22,85 +22,88 @@ const render = require("./lib/htmlRenderer");
 // The project must prompt the user to build an engineering team. An engineering
 // team consists of a manager, and any number of engineers and interns.
 
+//empty array to house the emplyees
+var employeesArray = [];
+
 // array of questions for user to answer.
 const questions = [
   {
     type: "input",
     message: "What is your Manager's name?",
-    name: "managerName",
+    name: "name",
   },
   {
     type: "input",
     message: "What is your Manager's id number?",
-    name: "managerId",
+    name: "id",
   },
   {
     type: "input",
     message: "What is your Manager's email address?",
-    name: "managerEmail",
+    name: "email",
   },
   {
     type: "input",
     message: "What is your Manager's office number?",
-    name: "managerOfficeNumber",
+    name: "officeNumber",
   },
   {
-    type: "checkbox",
+    type: "list",
     message: "What type of team member would you like to add?",
     choices: ["Engineer", "Intern", "I don't want to add any more team members."],
-    name: "teamMemberAdd",
+    name: "role",
   },
   {
     type: "input",
     message: "What is your Engineer's name?",
-    name: "engineerName",
+    name: "name",
   },
   {
     type: "input",
     message: "What is your Engineer's id number?",
-    name: "engineerId",
+    name: "id",
   },
   {
     type: "input",
     message: "What is your Engineer's email address?",
-    name: "engineerEmail",
+    name: "email",
   },
   {
     type: "input",
     message: "What is your Engineer's GITHUB username?",
-    name: "engineerGithubUser",
+    name: "github",
   },
   {
-    type: "checkbox",
+    type: "list",
     message: "What type of team member would you like to add?",
     choices: ["Engineer", "Intern", "I don't want to add any more team members."],
-    name: "teamMemberAdd",
+    name: "role",
   },
   {
     type: "input",
     message: "What is your Intern's name?",
-    name: "internName",
+    name: "name",
   },
   {
     type: "input",
     message: "What is your Itern's ID number?",
-    name: "internId",
+    name: "id",
   },
   {
     type: "input",
     message: "What is your Intern's email address?",
-    name: "internEmail",
+    name: "email",
   },
   {
     type: "input",
     message: "What school did your Intern attend?",
-    name: "internSchool",
+    name: "school",
   },
   {
-    type: "checkbox",
+    type: "list",
     message: "What type of team member would you like to add?",
     choices: ["Engineer", "Intern", "I don't want to add any more team members."],
-    name: "teamMemberAdd",
+    name: "role",
   },
 ];
 //reference the var on line 1 and use the prompt method()
@@ -110,12 +113,15 @@ inquirer
   //below you see what happens WHEN the response returns
   .then(function (response) {
     console.log("response: ", response);
-    //strigify the returned response WITH FORMATTING
-    //let responseObj = JSON.stringify(response, null, "\t");
-    let responseObj = response;
-    console.log(responseObj);
-    //instead of stringify I am passing the response obj into the function and since the
-    responseObj = render(responseObj);
+    
+    
+    employeesArray.push(response);
+
+     console.log(employeesArray);
+
+//const manager = new Manager (response);
+
+//instead of stringify I am passing the response obj into the function and since the
 
   });
   
