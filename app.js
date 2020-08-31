@@ -50,7 +50,11 @@ const questions = [
   {
     type: "list",
     message: "What type of team member would you like to add?",
-    choices: ["Engineer", "Intern", "I don't want to add any more team members."],
+    choices: [
+      "Engineer",
+      "Intern",
+      "I don't want to add any more team members.",
+    ],
     name: "role",
   },
   {
@@ -76,7 +80,11 @@ const questions = [
   {
     type: "list",
     message: "What type of team member would you like to add?",
-    choices: ["Engineer", "Intern", "I don't want to add any more team members."],
+    choices: [
+      "Engineer",
+      "Intern",
+      "I don't want to add any more team members.",
+    ],
     name: "role",
   },
   {
@@ -102,7 +110,11 @@ const questions = [
   {
     type: "list",
     message: "What type of team member would you like to add?",
-    choices: ["Engineer", "Intern", "I don't want to add any more team members."],
+    choices: [
+      "Engineer",
+      "Intern",
+      "I don't want to add any more team members.",
+    ],
     name: "role",
   },
 ];
@@ -113,18 +125,16 @@ inquirer
   //below you see what happens WHEN the response returns
   .then(function (response) {
     console.log("response: ", response);
-    
-    
+
     employeesArray.push(response);
 
-     console.log(employeesArray);
+    console.log(employeesArray);
 
-//const manager = new Manager (response);
+    //const manager = new Manager (response);
 
-//instead of stringify I am passing the response obj into the function and since the
-
+    //instead of stringify I am passing the response obj into the function and since the
   });
-  
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
