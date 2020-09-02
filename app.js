@@ -13,33 +13,43 @@ const render = require("./lib/htmlRenderer");
 const { listenerCount } = require("process");
 //empty array to house the emplyees
 var employeesArray = [];
+//requiring the functions from the prompt.js page referrencing the file path 
 const {
   addEmployee,
   managerPrompt,
   engineerPrompt,
   internPrompt,
 } = require("./prompt");
+
+//
 async function getEmployees() {
   let proceed = true,
-      choice, engineer, intern;
+    choice,
+    engineer,
+    intern;
   while (proceed) {
     choice = await addEmployee();
     switch (choice.engineerOrIntern.toUpperCase()) {
-      case 'ENGINEER':
+      case "ENGINEER":
         engineer = await engineerPrompt();
         employeesArray.push(
-          new Engineer(engineer.name, engineer.id, engineer.email, engineer.github)
+          new Engineer(
+            engineer.name,
+            engineer.id,
+            engineer.email,
+            engineer.github
+          )
         );
         break;
-      case 'INTERN':
+      case "INTERN":
         intern = await internPrompt();
         employeesArray.push(
           new Intern(intern.name, intern.id, intern.email, intern.school)
-        ); 
+        );
         break;
       default:
         proceed = false;
-        fs.writeFile("index.html", render(employeesArray), function() {
+        fs.writeFile("index.html", render(employeesArray), function () {
           console.log("HTML file created!");
         });
     }
@@ -53,4 +63,4 @@ async function main() {
   );
   await getEmployees();
 }
-main();
+main();//calling the main function that calls the manager prompt
