@@ -1,7 +1,6 @@
 //npm modules
 const inquirer = require("inquirer");
-
-function addEmployee() {
+async function addEmployee() {
   return inquirer.prompt([
     {
       type: "list",
@@ -11,8 +10,7 @@ function addEmployee() {
     },
   ]);
 }
-
-function managerPrompt() {
+async function managerPrompt() {
   return inquirer.prompt([
     {
       type: "input",
@@ -36,8 +34,7 @@ function managerPrompt() {
     },
   ]);
 }
-
-function engineerPrompt() {
+async function engineerPrompt() {
     return inquirer.prompt([
     {
       type: "input",
@@ -61,8 +58,7 @@ function engineerPrompt() {
     },
   ]);
 }
-
-function internPrompt() {
+async function internPrompt() {
     return inquirer.prompt([
     {
       type: "input",
@@ -86,7 +82,6 @@ function internPrompt() {
     },
   ]);
 }
-
 //exporting the module
 module.exports = {
   addEmployee,
