@@ -21,7 +21,7 @@ const {
   internPrompt,
 } = require("./prompt");
 
-//
+//this  function fires after the manager questions
 async function getEmployees() {
   let proceed = true,
     choice,

@@ -35,7 +35,7 @@ async function managerPrompt() {
   ]);
 }
 async function engineerPrompt() {
-    return inquirer.prompt([
+  return inquirer.prompt([
     {
       type: "input",
       message: "What is your Engineer's name?",
@@ -59,7 +59,7 @@ async function engineerPrompt() {
   ]);
 }
 async function internPrompt() {
-    return inquirer.prompt([
+  return inquirer.prompt([
     {
       type: "input",
       message: "What is your Intern's name?",
